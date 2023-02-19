@@ -1,0 +1,34 @@
+header{
+    height: 64px;
+    background: #3F51B5;
+}
+.logo{
+    padding: 20px;
+    width: 200px;
+}
+nav ul{
+    padding: 20px;
+    float: right;
+}
+nav ul li{
+    display: inline-block;
+}
+nav ul li a{
+    *padding: 10px;
+    padding-top: 3px ;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 3px;
+    color: aliceblue;
+    background-color: #4CAF50 ;
+    border-radius: 5px;
+    font-size: 15px;
+    text-decoration: none;
+}
+.Img-Fondo{
+    /* ver bien el orden en el que ponemos las cosas ya que algunos podrian modificar o causar errores sobre otros   Hojas de estilo en cascada*/
+    width: 100%;
+    height: 100vh;
+    background: url(../images/tree-736885__340\ \(2\).jpg)center center fixed;
+    background-size: cover;
+}

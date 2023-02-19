@@ -1,0 +1,66 @@
+/* Para ver sinuestras etiquetas afectan a la pagina -> click derecho  -> inspeccionar -> ver el margin(contorno naranja ) e ir modificando desde consola */
+h2{
+
+    margin-top: 1px;
+}
+h1{
+    width: 100%;
+    font-size: 57px;
+    margin-bottom: 1px;
+}
+.hs{
+    text-align: center;
+}
+body{
+    width: 100%;
+
+    background-color: yellow;
+}
+/* Padding ->modifica el relleno de las etiquetas */
+h2{
+    width: 100%;
+    *background-color: blue;
+    /* desde aqui modifico el relleno de la etiqueta h2 aumentando el padding en la parte superior e inferior */
+    padding-top: 20px ;
+    padding-bottom: 20px;
+    /*de Isquierda a derecha */
+    padding-left:0px ;
+    padding-right: 0px;
+}
+/* haciendo botones */
+h3{
+    text-align: center;
+}
+
+.btn{
+    background-color: brown;
+    color: white;
+    font-size: 15px;
+    /* textdec permite scar la linea debajo del a ___ */
+    text-decoration: none;
+    padding: 5px;
+    /* Cambiar el radio de los bordes */
+    border-radius: 5px;
+    /* insertar un borde al boton */
+    border: solid 2px black ;
+}
+/* Cuenado estemos en el boton en el estado de hover(cursor sobre el boton) hacer tal accion.Seria como una subclase de btn */
+.btn:hover{
+    background-color: white;
+    color: black;
+    border: solid 5px red ;
+    font-size: 20px;
+}
+/* Aqui empieza la parte de bordes */
+hr{
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+section{
+    width: 100%;
+}
+footer{
+    width: 100%;
+
+}
