@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JsonPart</title>
+</head>
+<body>
+    <script>
+        var alumno ={
+            materias: ['ISO','ING1','POO1'],
+            nombre: 'david',
+            edad: '21',
+            email: 'marcosmatias086@gmail.com',
+            saludar:function(){
+                console.log("hell")
+            }
+        }
+        for(let i=0;i<alumno.materias.length; i++){
+            document.write(alumno.materias[i]+"<br>")
+        }
+        /* Asignar valores fuera del objt*/
+        alumno.edad=22
+        alumno.email="marcosmatiaspoma@gmail.com"
+        document.write("Acabo de cumplir "+alumno.edad+"anios"+"<br>")
+        document.write("Mi nuevo mail es :"+alumno.email+"<br>")
+
+    </script>
+</body>
+</html>
