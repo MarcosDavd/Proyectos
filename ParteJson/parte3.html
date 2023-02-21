@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*1er forma de declarar clases*/
+        /*Class declaration*/
+        class Alumno{
+            constructor(name,age,email){
+                this.nombre=name
+                this.edad=age
+                this.email=email
+                }
+            saludar(){
+                document.write("Hola soy "+this.nombre)
+            }
+        }
+        let david =new Alumno("David",21,"david@gmail.com")
+        david.saludar()
+
+        /*Class expresion -si es de alg tipo
+        let Alumno = class TipoDeClase {
+
+        }*/
+
+    </script>
+</body>
+</html>

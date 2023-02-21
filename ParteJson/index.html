@@ -8,13 +8,15 @@
 </head>
 <body>
     <script>
+        /*siempre usar el document.write*/
+        /*el console no*/
         var alumno ={
             materias: ['ISO','ING1','POO1'],
             nombre: 'david',
             edad: '21',
             email: 'marcosmatias086@gmail.com',
             saludar:function(){
-                console.log("hell")
+                document.write("hell")
             }
         }
         for(let i=0;i<alumno.materias.length; i++){
@@ -25,6 +27,7 @@
         alumno.email="marcosmatiaspoma@gmail.com"
         document.write("Acabo de cumplir "+alumno.edad+"anios"+"<br>")
         document.write("Mi nuevo mail es :"+alumno.email+"<br>")
+        alumno.saludar()
 
     </script>
 </body>

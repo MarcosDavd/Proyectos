@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Con la A--- indico que es funcion constructora de un objeto*/
+        function Alumno(name,age,email){
+            this.nombre=name
+            this.edad=age
+            this.email=email
+            this.saludar=function(){
+                document.write("Hola soy "+this.nombre+","+" tengo "+this.edad+" anios "+" y mi mail de contacto es "+this.email)
+            }
+        }
+            /*Instanciando un objeto de Alumno*/
+            let marcos=new Alumno("marcos",21,"marcosmatias086@gmail.com")
+            marcos.saludar()
+    </script>
+</body>
+</html>
