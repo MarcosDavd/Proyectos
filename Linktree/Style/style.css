@@ -1,0 +1,37 @@
+
+body{
+    background-color: #4CAF50;
+    text-align: center;
+}
+.profile-photo{
+    width: 170px;
+    border-radius: 50%;
+}
+header nav ul{
+    padding: 0;
+    margin: 0;
+}
+header nav ul li{
+    display: inline;
+    background-color: #009688;
+    border-radius: 5px;
+}
+.info p{
+    padding-left: 15%;
+    padding-right: 15%;
+}
+.info a{
+    text-decoration: none;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    border-radius: 4px;
+    margin-right: 30%;
+    margin-left: 30%;
+    display: block;
+    margin-bottom: 10px ;
+    background-color: #009688;
+    padding-left:;
+}
+footer hr{
+    border-color: blue;
+}
