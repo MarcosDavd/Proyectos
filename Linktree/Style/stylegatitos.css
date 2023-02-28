@@ -1,0 +1,12 @@
+body{
+    background-color: rosybrown;
+}
+div{
+    width: 100%;
+    display: flex;
+}
+div img{
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+}
