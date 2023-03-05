@@ -1,12 +1,24 @@
 body{
     background-color: rosybrown;
+    display: inline;
 }
-div{
-    width: 100%;
+section{
+    margin: 0%;
+    padding: 0;
     display: flex;
+
+    height: 430px;
 }
-div img{
-    align-items: center;
-    justify-content: center;
-    width: 40%;
+section img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+}
+section img:hover{
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120px);
 }

@@ -12,7 +12,8 @@ body{
 }
 .profile-photo{
     margin-top: 20px;
-    width: 200px;
+    width: 25%;
+    min-height: 30px;
     border-radius: 50%;
 }
 .name a{
@@ -27,6 +28,7 @@ header nav ul li{
     display: inline-block;
 }
 .info p{
+
     margin-left: 15%;
     margin-right: 15%;
     margin-bottom: 30px;
@@ -43,7 +45,7 @@ header nav ul li{
     padding-top: 5px;
     margin-top: 7px;
     padding-bottom: 7px;
-    font-size: 18px;
+    font-size: 90%;
     margin: 5px;
     margin-left: 25%;
     margin-right: 25%;
