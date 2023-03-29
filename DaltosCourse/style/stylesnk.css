@@ -1,0 +1,21 @@
+body{
+    background-image:url(../Images/snk.jpg);
+}
+h1{
+    text-align: center;
+    color: white;
+}
+h2{
+    color: white;
+}
+p{
+    color: white;
+}
+nav{
+    text-align: center;
+}
+nav ul li{
+    background-color: black ;
+    color: aliceblue;
+    display: inline;
+}

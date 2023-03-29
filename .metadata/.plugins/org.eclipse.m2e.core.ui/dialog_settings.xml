@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="C:\Users\Usuario\eclipse-workspace\Ejercicio5\src\main\java\ar\edu\unlp\info\oo1\Ejercicio5\Mamifero.java"/>
+			<item value="C:\Users\Usuario\eclipse-workspace\Ejercicio12\src\main\java\ar\edu\unlp\info\oo1\Ejercicio12\ReporteDeConstruccion.java"/>
+			<item value="C:\Users\Usuario\eclipse-workspace\CuentaConGanchos\src\main\java\ar\edu\unlp\info\oo1\CuentaConGanchos\CuentaCorriente.java"/>
+			<item value="C:\Users\Usuario\eclipse-workspace\Ejercicio9\src\main\java\ar\edu\unlp\info\oo1\Ejercicio9\CajadeAhorro.java"/>
+			<item value="C:\Users\Usuario\eclipse-workspace\parapracticar\src\main\java\ar\edu\unlp\info\oo1\parapracticar\ArrayLista.java"/>
+			<item value="C:\Users\Usuario\eclipse-workspace\Ejercicio6\src\main\java\ar\edu\unlp\info\oo1\Ejercicio_5\Farola.java"/>
+			<item value="C:\Users\Usuario\eclipse-workspace\parapracticar\src\main\java\ar\edu\unlp\info\oo1\parapracticar\Recusividad.java"/>
+			<item value="C:\Users\Usuario\eclipse-workspace\balanzaElectronica\src\main\java\ar\edu\unlp\info\oo1\balanzaElectronica\Ticket.java"/>
+			<item value="C:\Users\Usuario\Downloads\ejercicio1-1\ejercicio1-wallpost\src\main\java\ar\edu\unlp\oo1\ejercicio1\impl\WallPostImpl.java"/>
+			<item value="C:\Users\Usuario\eclipse-workspace\holamundo\src\holamundo\HW.java"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="defaultLocal"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="ar.edu.unlp.info.oo1.PrimerRec"/>
+			<item value="ar.edu.unlp.info.oo1.Lambdas"/>
+			<item value="ar.edu.unlp.info.oo1.ALquilerDePropiedades"/>
+			<item value="ar.edu.unlp.info.oo1.Ejercicio14"/>
+			<item value="ar.edu.unlp.info.oo1.Ejercicio13"/>
+			<item value="ar.edu.unlp.info.oo1.Ejercicio12"/>
+			<item value="ar.edu.unlp.info.oo1.El_Inversor"/>
+			<item value="ar.edu.unlp.info.oo1.DistribuidoraElectrica"/>
+			<item value="ar.edu.unlp.info.oo1.CuentaConGanchos"/>
+			<item value="ar.edu.unlp.info.oo1.figurasyCuerpos"/>
+			<item value="ar.edu.unlp.info.oo1.Presupuestos"/>
+			<item value="ar.edu.unlp.info.oo1.Balanza_Electronica"/>
+			<item value="ar.edu.unlp.info.oo1.Ejecicio10"/>
+			<item value="ar.edu.unlp.info.oo1.Ejercicio9"/>
+			<item value="ar.edu.unlp.info.oo1.Ejercicio8"/>
+		</list>
+		<list key="groupId">
+			<item value="ar.edu.unlp.info.oo1"/>
+		</list>
+		<list key="artifactId">
+			<item value="PrimerRec"/>
+			<item value="Lambdas"/>
+			<item value="ALquilerDePropiedades"/>
+			<item value="Ejercicio14"/>
+			<item value="Ejercicio13"/>
+			<item value="Ejercicio12"/>
+			<item value="El_Inversor"/>
+			<item value="DistribuidoraElectrica"/>
+			<item value="CuentaConGanchos"/>
+			<item value="figurasyCuerpos"/>
+			<item value="Presupuestos"/>
+			<item value="Balanza_Electronica"/>
+			<item value="Ejecicio10"/>
+			<item value="Ejercicio9"/>
+			<item value="Ejercicio8"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.wizards.CustomArchetypeDialog">
+		<list key="archetypeGroupId">
+			<item value="ar.edu.unlp.info.oo1"/>
+		</list>
+		<list key="archetypeArtifactId">
+			<item value="objetos-uno"/>
+		</list>
+		<list key="archetypeVersion">
+			<item value="1.0.0"/>
+		</list>
+		<list key="repositoryUrl">
+			<item value="https://github.com/edu-unlp-info-objetos/oo1/blob/main/objetos-uno-archetype/objetos-uno-archetype-1.0.0.jar?raw=true"/>
+		</list>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\Usuario\eclipse-workspace\balanzaElectronica"/>
+			<item value="C:\Users\Usuario\Downloads\ejercicio1-1"/>
+			<item value="C:\Users\Usuario\Downloads\ejercicio1\ejercicio1-wallpost"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

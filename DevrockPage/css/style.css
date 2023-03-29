@@ -25,10 +25,16 @@ nav ul li a{
     font-size: 15px;
     text-decoration: none;
 }
-.Img-Fondo{
+.splash{
     /* ver bien el orden en el que ponemos las cosas ya que algunos podrian modificar o causar errores sobre otros   Hojas de estilo en cascada*/
     width: 100%;
     height: 100vh;
     background: url(../images/tree-736885__340\ \(2\).jpg)center center fixed;
     background-size: cover;
+}
+.splash .col-md-6{
+    text-align: right;
+}
+h1{
+    color: aliceblue;
 }
