@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <input type="text" id="mi-input" placeholder="que desea eliminar ">
+        <button type="submit" onclick="eliminar()">Enviar</button>
+    <ul id="pais">
+
+    </ul>
+
+    <script>
+        function eliminar(){
+            let buscar=document.getElementById('mi-input').value;
+            let lista= document.getElementById('pais');
+            let elementos= lista.querySelectorAll('li');
+            elementos.forEach(e =>{
+                if(e.textContent.includes(buscar)){
+                    console.log(e);
+                    lista.removeChild(e);
+                    alert("funca");
+                }
+            });
+        }
+        function random(data) {
+            return Math.floor(Math.random() * data);
+        }
+        function mostrarInfo(data){
+            let c=0;
+            var pais={
+                nombre : ""
+                , capital : ""
+                , poblacion : ""
+                , continente : ""
+                , moneda : ""
+            }
+            c=random(data.length);
+            pais.nombre=data[c].name.common;    
+            pais.capital=data[c].capital;
+            pais.poblacion=data[c].population;
+            pais.continente=data[c].region;
+            let monedas=data[c].currencies;  
+            for(let m in monedas){
+                pais.moneda+=m;
+            }
+            const ul=document.getElementById('pais');
+            
+            for(let elem in pais) {
+                let li=document.createElement('li');
+                li.innerHTML=elem+' : '+pais[elem];
+                ul.appendChild(li);
+            }
+            
+        }
+        function mostrar(){
+            fetch('https://restcountries.com/v3.1/all')
+            .then(res => res.json())
+            .then(data => mostrarInfo(data));
+            };
+        mostrar();
+    </script>
+</body>
+</html>

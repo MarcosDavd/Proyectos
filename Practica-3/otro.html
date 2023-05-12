@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <title>Star Wars</title>
+
+    <body>
+    <div id="buttons">
+    <button class="btnPre" id="botonPre" > < </button> <button class="btnNext" id="botonNext"> > </button> 
+    </div>
+    <div id = container ></div>
+
+    <script>
+        var previous;
+        var next;
+        var url = "https://swapi.dev/api/people/";
+        
+        var contador = 1;
+        
+        function crearPersonaje (data){
+            var personaje = {
+                    Nombre : "",
+                    Nacimiento : "",
+                    Altura: "",
+                    Peso: "",
+                }    
+            for (i = 0; i < data.results.length; i++){
+                personaje.Nombre = data.results[i].name;
+                personaje.Nacimiento = data.results[i].birth_year;
+                personaje.Altura = data.results[i].height;
+                personaje.Peso = data.results[i].mass;
+                var img = document.createElement("img");
+                img.height = 270;
+                img.width = 200;
+                let url = "https://starwars-visualguide.com/assets/img/characters/"+contador+".jpg";
+                img.src = url;
+                let ul = document.createElement("ul");
+                for (elem in personaje){
+                    let li = document.createElement("li");
+                    li.innerHTML = elem +' : '+personaje[elem];
+                    ul.appendChild(li);
+                }
+                ul.appendChild(img);
+                ul.classList.add('elemento');
+                ul.classList.add('div');
+                contador++; 
+                let container = document.getElementById("container");
+                container.appendChild(ul);
+            }
+        }
+    
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            crearPersonaje(data);
+            cambiarUrl(data.next, data.previous, next, previous);
+        })  
+        .catch (err => console.log(err));
+
+        function PagPost(next, previous){
+            fetch(next)
+            .then(response => response.json())
+            .then(data => {
+                crearPersonaje(data);
+                console.log(data.previous);
+                console.log(data.next);
+                cambiarUrl(data.next, data.previous);
+            })  
+            .catch (err => console.log(err));
+        }
+
+        function cambiarUrl(URLnext, URLprevious){
+            previous = URLprevious;
+            next = URLnext;
+        }
+
+        function PagPre(previous, next){
+            fetch(previous)
+            .then(response => response.json())
+            .then(data =>{
+                crearPersonaje(data);
+                cambiarUrl(data.next, data.previous);
+            })
+            .catch (err => console.log(err));
+        }
+
+        buttons.addEventListener('click', (e)=> {
+            if (e.target.classList.contains('btnNext')){
+                PagPost(next, previous);       
+            }else{
+                if (e.target.classList.contains('btnPre')){
+                    PagPre(previous, next);
+                }
+            }
+        })
+
+    </script>
+  </body>
+</html>

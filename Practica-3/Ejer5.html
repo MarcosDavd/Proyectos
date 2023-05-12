@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.15/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.15/dist/sweetalert2.min.js"></script>
+    <style>
+        li {
+          list-style-type: none;
+        }
+        ul{
+            padding: 0;
+            margin: 5%;
+        }
+        body{
+            background-color: #00BCD4;
+        }
+        #container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #container div {
+            border-radius: 10px;
+            border: 2px solid #B2EBF2;
+            background-color: #B2EBF2;
+        }
+        #input{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Paises</h1>
+    <div id="input"><input type="text" id="mi-input" placeholder="Ingrese una referencia ">
+        <button type="submit" onclick="eliminar()">Eliminar</button>
+    </div>
+    <div id="container"></div>
+    <script>
+        
+        function random(data) {
+            return Math.floor(Math.random() * data);
+        }
+        function mostrarInfo(data){
+            let c=0;
+            var pais={
+                Nombre : ""
+                , Capital : ""
+                , Poblacion : ""
+                , Continente : ""
+            }
+            c=random(data.length);
+            let url = data[c].flags.svg;
+            pais.Nombre=data[c].name.common;    
+            pais.Capital=data[c].capital;
+            pais.Poblacion=data[c].population;
+            pais.Continente=data[c].region;
+            //ocontainer para ir agregando los div dentro del div pricipal
+            const container=document.getElementById('container');
+            //creo el div que contendra los datos del pais
+            let div= document.createElement('div');
+            
+            // creo un ul para agregar al div "pais"
+            let ul = document.createElement('ul');
+            //creo un tag img para la bandera del pais
+            let img=document.createElement('img');
+            img.src=url;
+            img.width=50;
+            img.height=30;
+            //agrego al ul del div "pais " su bandera
+            ul.appendChild(img);
+            for(let elem in pais) {
+                let li=document.createElement('li');
+                li.innerHTML=elem+' : '+pais[elem];
+                // agrego al ul del div "pais " los datos del pais
+                ul.appendChild(li);
+            }
+            //creo un salto de linea
+            /*let br=document.createElement('br');
+            ul.appendChild(br);*/
+            div.appendChild(ul);
+            div.id=pais.Nombre;
+            container.appendChild(div);
+        }
+        function paises(data){
+            for(let i=0; i<5; i++){
+                mostrarInfo(data);
+            }
+        }
+        function mostrar(){
+            fetch('https://restcountries.com/v3.1/all')
+            .then(res => res.json())
+            .then(data => paises(data));
+            };
+        mostrar();
+        function sinConincidencias(){
+            Swal.fire({
+                title: 'No hay coincidencias',
+                icon: 'info',
+                position: 'center',
+                showConfirmButton: false,
+                timer: 2000
+                });
+        }
+        function eliminar(){
+            let inp=document.getElementById('mi-input').value;
+            if(inp!=""){
+                let container=document.getElementById('container');
+                let divIDs=container.querySelectorAll('div');
+                let deleted=0;
+                for (let i=0; i< divIDs.length; i++) {
+                    if(!divIDs[i].id.includes(inp)){
+                        container.removeChild(divIDs[i]);
+                        deleted++;  
+                    }
+                }
+                if(deleted==0){
+                    sinConincidencias();
+                }
+            }else{
+                Swal.fire({
+                title: 'Ingrese Informacion',
+                position: 'center',
+                showConfirmButton: false,
+                timer: 2000
+                });
+            }
+        }
+    </script>
+    
+</body>
+</html>

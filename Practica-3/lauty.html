@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Star Wars</title>
+
+    <body>
+    <div id="buttons">
+    <button class = "btnPre" ><</button> <button class = "btnNext" id = "botonNext" >></button> 
+    </div>
+    <div id = container >
+    </div>
+
+    <script>
+        var url = "https://swapi.dev/api/people/";
+        var urlnueva;
+        var contador = 1;
+        var contador2 = 1;
+        
+        function crearPersonaje (data){
+            var containerHijo = document.createElement("div");
+            containerHijo.style.display = "flex";
+            containerHijo.id = "hijo"+(contador);
+
+            var personaje = {
+                    Nombre : "",
+                    Nacimiento : "",
+                    Altura: "",
+                    Peso: "",
+                }
+            
+            for (i = 0; i < data.results.length; i++){
+                personaje.Nombre = data.results[i].name;
+                personaje.Nacimiento = data.results[i].birth_year;
+                personaje.Altura = data.results[i].height;
+                personaje.Peso = data.results[i].mass;
+                var img = document.createElement("img");
+                img.height = 270;
+                img.width = 200;
+                url = "https://starwars-visualguide.com/assets/img/characters/"+contador+".jpg";
+                img.src = url;
+                
+                let ul = document.createElement("ul");
+                for (elem in personaje){
+                    let li = document.createElement("li");
+                    li.innerHTML = elem +' : '+personaje[elem];
+                    ul.appendChild(li);
+                }
+                ul.appendChild(img);
+                ul.classList.add('elemento');
+                containerHijo.appendChild(ul);
+                containerHijo.classList.add('div');
+                contador++; 
+            }
+            containerHijo.style.display="none";
+            let containerPadre = document.getElementById("container");
+            containerPadre.appendChild(containerHijo);
+        }
+        function cambiarUrl(url, urlNext){
+            url = urlnueva;
+            let boton = document.getElementById("botonNext");
+            boton.setAttribute("data-url", urlNext);
+        }
+        function llamar(url){
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                crearPersonaje(data);
+                cambiarUrl(url, data.next);
+            })  
+            .catch (err => console.log(err));
+        }
+
+        llamar(url);
+
+        
+
+        function ocultar (){
+                contador2 = contador2 - 10;
+                let hijo = document.getElementById("hijo"+contador2);
+                
+                console.log("que hijo es ?"+hijo);   
+                
+                console.log(contador2);
+
+                hijo.style.display = "none"; 
+        }
+        
+        function desocultar(){
+            
+            contador2 = contador2 - 10;
+            
+            let hijo = document.getElementById("hijo"+ contador2);
+            hijo.style.display = "inline-block";
+            
+        }
+
+        
+
+        buttons.addEventListener('click', (e)=> {
+            if (e.target.classList.contains('btnNext')){
+                let value = e.target.dataset.url
+                contador2 = contador;
+                
+                ocultar();
+                llamar(value);
+
+            }else{
+
+                if (e.target.classList.contains('btnPre')){
+                    console.log("tiene"+contador);
+                    contador2=contador;
+                    
+                    ocultar();
+                    console.log(contador2);
+                    desocultar();
+                    console.log(contador2);
+                }
+            }
+        })
+    </script>
+  </body>
+</html>

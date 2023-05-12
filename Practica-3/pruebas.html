@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Star Wars</title>
+
+    <body>
+    <div id="buttons">
+    <button class = "btnPre" ><</button> <button class = "btnNext" id = "botonNext" >></button> 
+    </div>
+    <div id = container style="display: flex;">
+    </div>
+
+    <script>
+        var url = "https://swapi.dev/api/people/";
+        var urlnueva;
+        var contador = 1;
+
+        function crearPersonaje (data){
+            var personaje = {
+                    Nombre : "",
+                    nacimiento : "",
+                    Altura: "",
+                    Peso: "",
+                }
+            for (i = 0; i < 10; i++){
+                personaje.Nombre = data.results[i].name;
+                personaje.Nacimiento = data.results[i].birth_year;
+                personaje.Altura = data.results[i].height;
+                personaje.Peso = data.results[i].mass;
+
+                var img = document.createElement("img");
+                img.height = 260;
+                img.width = 200;
+                console.log(data);
+                url = "https://starwars-visualguide.com/assets/img/characters/"+contador+".jpg";
+                img.src = url;
+
+                let tarjeta = document.getElementById("container");
+
+                let ul = document.createElement("ul");
+                for (elem in personaje){
+                    let li = document.createElement("li");
+                    li.innerHTML = elem +' : '+personaje[elem];
+                    ul.appendChild(li);
+                }
+                ul.appendChild(img);
+                tarjeta.appendChild(ul);
+                contador++; 
+            }
+        }
+    
+        llamar(url);
+
+        function llamar(url){
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                urlnueva = data.next;
+                crearPersonaje(data);
+                cambiarUrl(url, data.next);
+            })  
+            .catch (err => console.log(err));
+        }
+
+        function cambiarUrl(url, urlNext){
+            url = urlnueva;
+            console.log(urlnueva);
+            let boton = document.getElementById("botonNext");
+            boton.setAttribute("data-url", urlNext);
+        }
+
+        buttons.addEventListener('click', (e)=> {
+            if (e.target.classList.contains('btnNext')){
+                let value = e.target.dataset.url
+                
+                llamar(value);
+            }else{
+                if (e.target.classList.contains('btnPre')){
+                    // desocultar elementos
+                }
+            }
+        })
+    </script>
+  </body>
+</html>

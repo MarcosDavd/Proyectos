@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hello, world!</title>
+     
+      
+  </head>
+  <body>
+    <script>
+       const baseUrl = 'https://swapi.dev/api/people';
+let currentPage = 1;
+let allCharacters = [];
+
+class Personaje {
+  constructor(nombre, fechaNacimiento, altura, peso) {
+    this.nombre = nombre;
+    this.fechaNacimiento = fechaNacimiento;
+    this.altura = altura;
+    this.peso = peso;
+  }
+}
+
+function fetchCharacters() {
+  fetch(`${baseUrl}/?page=${currentPage}`)
+    .then(response => response.json())
+    .then(data => {
+      // Obtener los datos relevantes de cada personaje y agregarlos al vector 'allCharacters'
+      data.results.forEach(character => {
+        const { name, birth_year, height, mass } = character;
+        const personaje = new Personaje(name, birth_year, height, mass);
+        allCharacters.push(personaje);
+      });
+
+      if (data.next) {
+        currentPage++;
+        fetchCharacters();
+      } else {
+        displayCharacters();
+      }
+    })
+    .catch(error => {
+      console.log('Error:', error);
+    });
+}
+
+        function displayCharacters() {
+        // Aquí puedes utilizar los datos en 'allCharacters' para mostrar o trabajar con ellos según tus necesidades
+        console.log(allCharacters);
+        }
+
+        fetchCharacters();
+    console.log(allCharacters.length)
+    </script>  
+      
+  </body>
+</html>

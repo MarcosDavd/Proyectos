@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <img id="imagen-de-gato" />
+    <script>
+
+        function crearImagen(data){
+            const img= document.getElementById('imagen-de-gato');
+            img.src=data[0].url;
+        }
+        function mostrar(){
+            fetch('https://api.thecatapi.com/v1/images/search')
+            .then(res => res.json())
+            .then(data => {
+                crearImagen(data)})
+            .catch(error => {
+            console.error('Error al obtener la imagen:', error);
+            alert("Error al obtner la imagen")
+    });    
+        }
+        setInterval(mostrar, 2000);
+    </script>
+</body>
+</html>
